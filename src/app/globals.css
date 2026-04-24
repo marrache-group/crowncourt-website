@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-navy: #1A1F3A;
+  --color-navy-light: #2A2F4A;
+  --color-gold: #FFD700;
+  --color-gold-dark: #B89C00;
+  --color-cyan: #00D4FF;
+  --color-lime: #C4D82E;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-text-tertiary: rgba(255, 255, 255, 0.3);
+  --font-sans: var(--font-geist-sans);
+}
+
+body {
+  background: linear-gradient(180deg, var(--color-navy-light), var(--color-navy));
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
