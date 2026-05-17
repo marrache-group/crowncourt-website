@@ -1,81 +1,88 @@
-import Image from "next/image";
-import Link from "next/link";
-import { siteConfig } from "@/config/site";
+import Image from 'next/image'
+import Link from 'next/link'
 
-export default function Footer() {
+import { Container } from '@/components/Container'
+import logoSrc from '../../public/images/logo.png'
+
+export function Footer() {
   return (
-    <footer className="border-t border-white/8 bg-[#12152a]">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 sm:grid-cols-3">
-          {/* Brand */}
+    <footer className="border-t border-gray-200">
+      <Container>
+        <div className="flex flex-col items-start justify-between gap-y-12 pt-16 pb-6 lg:flex-row lg:items-start lg:py-16">
           <div>
-            <div className="mb-3 flex items-center gap-2">
+            <div className="flex items-center gap-4 text-gray-900">
               <Image
-                src="/images/logo.png"
-                alt="CrownCourt logo"
-                width={24}
-                height={24}
-                className="rounded-[5px]"
+                src={logoSrc}
+                alt="CrownCourt"
+                className="h-10 w-auto flex-none"
               />
-              <span className="text-sm font-semibold">{siteConfig.name}</span>
-            </div>
-            <p className="text-xs leading-relaxed text-text-secondary">
-              Tennis scoring reimagined
-              <br />
-              for Apple Watch.
-            </p>
-          </div>
-
-          {/* Product */}
-          <div>
-            <h4 className="mb-3 text-[10px] font-medium tracking-[2px] text-gold">
-              PRODUCT
-            </h4>
-            <div className="flex flex-col gap-2 text-xs text-text-secondary">
-              <Link href="/features" className="hover:text-white">
-                Features
-              </Link>
-              <Link href="/pricing" className="hover:text-white">
-                Pricing
-              </Link>
-              <a href={siteConfig.appStoreUrl} className="hover:text-white">
-                Download
-              </a>
+              <div>
+                <p className="text-base font-semibold">CrownCourt</p>
+                <p className="mt-1 text-sm text-gray-600">
+                  Tennis scoring reimagined
+                  <br />
+                  for Apple Watch.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h4 className="mb-3 text-[10px] font-medium tracking-[2px] text-gold">
-              LEGAL
-            </h4>
-            <div className="flex flex-col gap-2 text-xs text-text-secondary">
-              <Link href="/privacy" className="hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-white">
-                Terms of Service
-              </Link>
+          <div className="flex gap-16 sm:gap-24">
+            <div>
+              <p className="text-xs font-semibold tracking-widest text-[#FFD700] uppercase">
+                Product
+              </p>
+              <ul className="mt-4 space-y-3 text-sm text-gray-600">
+                <li>
+                  <Link href="/#features" className="hover:text-gray-900">
+                    Features
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#pricing" className="hover:text-gray-900">
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-gray-900">
+                    Download
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold tracking-widest text-[#FFD700] uppercase">
+                Legal
+              </p>
+              <ul className="mt-4 space-y-3 text-sm text-gray-600">
+                <li>
+                  <Link href="/privacy" className="hover:text-gray-900">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="hover:text-gray-900">
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 flex items-center justify-between border-t border-white/8 pt-6">
-          <p className="text-[10px] text-text-tertiary">
-            © {siteConfig.copyright}. All rights reserved.
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 pb-12 md:flex-row md:pt-6">
+          <p className="text-sm text-gray-500">
+            &copy; 2026 Marrache Group. All rights reserved.
           </p>
-          <div className="flex gap-3">
-            <a
-              href="mailto:support@crowncourt.app"
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-white/8 text-xs transition-colors hover:bg-white/15"
-              aria-label="Email"
-            >
-              ✉
-            </a>
-          </div>
+          <a
+            href="mailto:support@marrachegroup.com"
+            className="text-sm text-gray-500 hover:text-gray-900"
+          >
+            support@marrachegroup.com
+          </a>
         </div>
-      </div>
+      </Container>
     </footer>
-  );
+  )
 }

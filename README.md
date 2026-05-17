@@ -1,48 +1,35 @@
-# CrownCourt Website
+# Pocket
 
-Marketing site for **CrownCourt** — a watchOS tennis scoring app that uses the Digital Crown to track points, games, and sets from your wrist.
-
-Live: https://crowncourt.vercel.app
-
-## Stack
-
-- [Next.js](https://nextjs.org/) 16 (App Router)
-- React 19
-- TypeScript
-- Tailwind CSS v4 (`@tailwindcss/postcss`)
-- `marked` + `@tailwindcss/typography` for rendering the privacy / terms markdown content
+Pocket is a [Tailwind Plus](https://tailwindcss.com/plus) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
 ## Getting started
 
+To get started with this template, first install the npm dependencies:
+
 ```bash
 npm install
+```
+
+Next, run the development server:
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-## Scripts
+## Customizing
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the local dev server |
-| `npm run build` | Production build |
-| `npm run start` | Serve the production build |
-
-## Project layout
-
-```
-src/
-├── app/         # Next.js App Router pages (home, features, pricing, privacy, terms)
-├── components/  # Reusable UI components
-├── config/      # Site-wide config (name, tagline, URLs)
-├── content/     # Markdown source for privacy & terms
-├── hooks/       # Custom React hooks
-└── lib/         # Helpers / utilities
-```
-
-Site-wide metadata (name, tagline, URL, copyright) is centralised in `src/config/site.ts`.
+You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
 
 ## License
 
-© 2026 Marrache Group. All rights reserved.
+This site template is a commercial product and is licensed under the [Tailwind Plus license](https://tailwindcss.com/plus/license).
+
+## Learn more
+
+To learn more about the technologies used in this site template, see the following resources:
+
+- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
+- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
+- [Headless UI](https://headlessui.dev) - the official Headless UI documentation

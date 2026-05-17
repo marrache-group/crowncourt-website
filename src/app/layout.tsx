@@ -1,40 +1,32 @@
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import "./globals.css";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import { type Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import clsx from 'clsx'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import '@/styles/tailwind.css'
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://crowncourt.vercel.app"),
   title: {
-    default: "CrownCourt — Score Tennis From Your Wrist",
-    template: "%s | CrownCourt",
+    template: '%s | CrownCourt',
+    default: 'CrownCourt — Score Tennis From Your Wrist',
   },
   description:
-    "A watchOS tennis scoring app using the Digital Crown. Track points, games, sets — all from your wrist.",
-  openGraph: {
-    type: "website",
-    siteName: "CrownCourt",
-  },
-};
+    'A watchOS tennis scoring app using the Digital Crown. Track points, games, sets — all from your wrist.',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-sans">
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+    <html lang="en" className={clsx('bg-gray-50 antialiased', inter.variable)}>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
