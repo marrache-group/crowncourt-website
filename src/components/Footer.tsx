@@ -70,10 +70,26 @@ export function Footer() {
                 </li>
               </ul>
             </div>
+
+            <div>
+              <p className="text-xs font-semibold tracking-widest text-gold uppercase">
+                Support
+              </p>
+              <ul className="mt-4 space-y-3 text-xs text-white/60">
+                <li>
+                  <a
+                    href="mailto:support@marrachegroup.com"
+                    className="text-xs text-white/40 hover:text-white"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 pb-12 md:flex-row md:pt-6">
+        <div className="border-t border-white/10 pt-8 pb-12 md:pt-6">
           <p className="text-xs text-white/40">
             &copy;{' '}
             {new Date().getFullYear() > 2026
@@ -82,12 +98,6 @@ export function Footer() {
             CrownCourt App - Designed and developed by The Marrache Group. All
             rights reserved.
           </p>
-          <a
-            href="mailto:support@marrachegroup.com"
-            className="text-xs text-white/40 hover:text-white"
-          >
-            support@marrachegroup.com
-          </a>
         </div>
       </Container>
     </footer>
