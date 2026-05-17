@@ -6,45 +6,47 @@ import logoSrc from '../../public/images/logo.png'
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200">
+    <footer className="border-t border-white/10">
       <Container>
         <div className="flex flex-col items-start justify-between gap-y-12 pt-16 pb-6 lg:flex-row lg:items-start lg:py-16">
           <div>
-            <div className="flex items-center gap-4 text-gray-900">
+            <div className="flex items-center gap-2">
               <Image
                 src={logoSrc}
                 alt="CrownCourt"
-                className="h-10 w-auto flex-none"
+                className="h-6 w-auto flex-none"
               />
-              <div>
-                <p className="text-base font-semibold">CrownCourt</p>
-                <p className="mt-1 text-sm text-gray-600">
-                  Tennis scoring reimagined
-                  <br />
-                  for Apple Watch.
-                </p>
-              </div>
+              <p className="text-xs font-semibold text-gold uppercase">
+                CrownCourt
+              </p>
+            </div>
+            <div>
+              <p className="mt-2 text-xs text-white/60">
+                Tennis scoring.
+                <br />
+                Reimagined for Apple Watch.
+              </p>
             </div>
           </div>
 
           <div className="flex gap-16 sm:gap-24">
             <div>
-              <p className="text-xs font-semibold tracking-widest text-[#FFD700] uppercase">
+              <p className="text-xs font-semibold tracking-widest text-gold uppercase">
                 Product
               </p>
-              <ul className="mt-4 space-y-3 text-sm text-gray-600">
+              <ul className="mt-4 space-y-3 text-xs text-white/60">
                 <li>
-                  <Link href="/#features" className="hover:text-gray-900">
+                  <Link href="/#features" className="hover:text-white">
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#pricing" className="hover:text-gray-900">
+                  <Link href="/#pricing" className="hover:text-white">
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-gray-900">
+                  <Link href="#" className="hover:text-white">
                     Download
                   </Link>
                 </li>
@@ -52,17 +54,17 @@ export function Footer() {
             </div>
 
             <div>
-              <p className="text-xs font-semibold tracking-widest text-[#FFD700] uppercase">
+              <p className="text-xs font-semibold tracking-widest text-gold uppercase">
                 Legal
               </p>
-              <ul className="mt-4 space-y-3 text-sm text-gray-600">
+              <ul className="mt-4 space-y-3 text-xs text-white/60">
                 <li>
-                  <Link href="/privacy" className="hover:text-gray-900">
+                  <Link href="/privacy" className="hover:text-white">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="hover:text-gray-900">
+                  <Link href="/terms" className="hover:text-white">
                     Terms of Service
                   </Link>
                 </li>
@@ -71,13 +73,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 pb-12 md:flex-row md:pt-6">
-          <p className="text-sm text-gray-500">
-            &copy; 2026 Marrache Group. All rights reserved.
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 pb-12 md:flex-row md:pt-6">
+          <p className="text-xs text-white/40">
+            &copy;{' '}
+            {new Date().getFullYear() > 2026
+              ? `2026–${new Date().getFullYear()}`
+              : '2026'}{' '}
+            CrownCourt App - Designed and developed by The Marrache Group. All
+            rights reserved.
           </p>
           <a
             href="mailto:support@marrachegroup.com"
-            className="text-sm text-gray-500 hover:text-gray-900"
+            className="text-xs text-white/40 hover:text-white"
           >
             support@marrachegroup.com
           </a>

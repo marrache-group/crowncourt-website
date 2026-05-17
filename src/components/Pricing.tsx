@@ -23,7 +23,7 @@ const plans = [
     excluded: ['Match history', 'Cloud sync'],
   },
   {
-    name: 'Noble 👑',
+    name: '👑 Noble',
     featured: true,
     price: '$4.99',
     duration: 'one-time purchase',
@@ -110,66 +110,48 @@ function Plan({
   return (
     <section
       className={clsx(
-        'flex flex-col overflow-hidden rounded-3xl p-6 shadow-lg shadow-gray-900/5',
-        featured ? 'bg-[#1A1F3A]' : 'bg-white',
+        'flex flex-col overflow-hidden rounded-3xl p-6 shadow-lg shadow-black/20',
+        featured
+          ? 'border border-gold/30 bg-navy'
+          : 'border border-white/10 bg-white/5',
       )}
     >
       <h3
         className={clsx(
           'text-sm font-semibold',
-          featured ? 'text-white' : 'text-gray-900',
+          featured ? 'text-gold' : 'text-white',
         )}
       >
         {name}
       </h3>
       <p
-        className={clsx(
-          'relative mt-5 text-3xl tracking-tight',
-          featured ? 'text-white' : 'text-gray-900',
-        )}
+        className={clsx('relative mt-5 text-3xl tracking-tight', 'text-white')}
       >
         {price}
       </p>
       <p
         className={clsx(
           'mt-1 text-sm',
-          featured ? 'text-[#FFD700]/80' : 'text-gray-500',
+          featured ? 'text-gold/70' : 'text-white/50',
         )}
       >
         {duration}
       </p>
-      <p
-        className={clsx(
-          'mt-3 text-sm',
-          featured ? 'text-gray-300' : 'text-gray-700',
-        )}
-      >
-        {description}
-      </p>
+      <p className={clsx('mt-3 text-sm', 'text-white/70')}>{description}</p>
       <div className="order-last mt-6">
         <ul
           role="list"
-          className={clsx(
-            '-my-2 divide-y text-sm',
-            featured
-              ? 'divide-gray-700 text-gray-300'
-              : 'divide-gray-200 text-gray-700',
-          )}
+          className="−my-2 divide-y divide-white/10 text-sm text-white/70"
         >
           {features.map((feature) => (
             <li key={feature} className="flex py-2">
-              <CheckIcon
-                className={clsx(
-                  'h-6 w-6 flex-none',
-                  featured ? 'text-[#FFD700]' : 'text-[#FFD700]',
-                )}
-              />
+              <CheckIcon className="h-6 w-6 flex-none text-gold" />
               <span className="ml-4">{feature}</span>
             </li>
           ))}
           {excluded.map((feature) => (
             <li key={feature} className="flex py-2 opacity-40">
-              <XIcon className="h-6 w-6 flex-none text-gray-400" />
+              <XIcon className="h-6 w-6 flex-none text-white/40" />
               <span className="ml-4">{feature}</span>
             </li>
           ))}
@@ -177,10 +159,9 @@ function Plan({
       </div>
       <Button
         href={button.href}
-        color={featured ? 'cyan' : 'gray'}
+        color={featured ? 'gold' : 'gray'}
         className="mt-6"
         aria-label={`Get started with the ${name} plan`}
-        style={featured ? { backgroundColor: '#FFD700', color: '#000' } : {}}
       >
         {button.label}
       </Button>
@@ -193,17 +174,17 @@ export function Pricing() {
     <section
       id="pricing"
       aria-labelledby="pricing-title"
-      className="border-t border-gray-200 bg-gray-100 py-20 sm:py-32"
+      className="border-t border-white/10 bg-navy-light/50 py-20 sm:py-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2
             id="pricing-title"
-            className="text-3xl font-medium tracking-tight text-gray-900"
+            className="text-3xl font-medium tracking-tight text-white"
           >
             Choose your game.
           </h2>
-          <p className="mt-2 text-lg text-gray-600">
+          <p className="mt-2 text-lg text-white/70">
             CrownCourt is free to use. Upgrade to Noble to unlock your full
             match history and cloud sync.
           </p>

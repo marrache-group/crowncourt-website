@@ -11,14 +11,14 @@ export default function TermsPage() {
     <div className="py-20 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl">
-          <h1 className="text-3xl font-medium tracking-tight text-gray-900">
+          <h1 className="text-3xl font-medium tracking-tight text-white">
             Terms of Service
           </h1>
-          <p className="mt-2 text-sm text-gray-500">Last updated: April 2026</p>
+          <p className="mt-2 text-sm text-white/50">Last updated: April 2026</p>
 
-          <div className="mt-10 space-y-8 text-sm text-gray-700">
+          <div className="mt-10 space-y-8 text-sm text-white/70">
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Agreement to Terms
               </h2>
               <p className="mt-3">
@@ -29,7 +29,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Description of Service
               </h2>
               <p className="mt-3">
@@ -40,7 +40,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Accounts
               </h2>
               <p className="mt-3">
@@ -51,7 +51,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 In-App Purchases
               </h2>
               <p className="mt-3">
@@ -63,7 +63,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Acceptable Use
               </h2>
               <p className="mt-3">You agree not to:</p>
@@ -75,7 +75,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Intellectual Property
               </h2>
               <p className="mt-3">
@@ -87,7 +87,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Disclaimers
               </h2>
               <p className="mt-3">
@@ -98,7 +98,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Limitation of Liability
               </h2>
               <p className="mt-3">
@@ -109,7 +109,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Changes to Terms
               </h2>
               <p className="mt-3">
@@ -120,14 +120,14 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Contact
               </h2>
               <p className="mt-3">
                 For questions about these Terms, contact us at{' '}
                 <a
                   href="mailto:support@marrachegroup.com"
-                  className="underline hover:text-gray-900"
+                  className="underline hover:text-white"
                 >
                   support@marrachegroup.com
                 </a>

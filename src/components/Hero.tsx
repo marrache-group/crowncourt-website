@@ -173,15 +173,15 @@ export function Hero() {
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <p className="text-sm font-semibold tracking-widest text-[#FFD700] uppercase">
+            <p className="text-sm font-semibold tracking-widest text-gold uppercase">
               CrownCourt
             </p>
-            <h1 className="mt-4 text-4xl font-medium tracking-tight text-gray-900">
+            <h1 className="mt-4 text-4xl font-medium tracking-tight text-white">
               Score tennis.
               <br />
               From your wrist.
             </h1>
-            <p className="mt-6 text-lg text-gray-600">
+            <p className="mt-6 text-lg text-white/70">
               No friction score tracking from your wrist. The ultimate tennis
               companion for Apple Watch.
             </p>
@@ -193,7 +193,7 @@ export function Hero() {
             </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
-            <BackgroundIllustration className="absolute top-4 left-1/2 h-[1026px] w-[1026px] -translate-x-1/3 mask-[linear-gradient(to_bottom,white_20%,transparent_75%)] stroke-gray-300/70 sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
+            <BackgroundIllustration className="absolute top-4 left-1/2 h-[1026px] w-[1026px] -translate-x-1/3 mask-[linear-gradient(to_bottom,white_20%,transparent_75%)] stroke-white/20 sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
             <div className="-mx-4 h-[448px] mask-[linear-gradient(to_bottom,white_60%,transparent)] px-9 sm:mx-0 lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-20 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
               <PhoneFrame className="mx-auto max-w-[366px]" priority>
                 <AppPlaceholder />
@@ -201,7 +201,7 @@ export function Hero() {
             </div>
           </div>
           <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
-            <p className="text-center text-sm font-semibold text-gray-900 lg:text-left">
+            <p className="text-center text-sm font-semibold text-white/60 lg:text-left">
               Built for
             </p>
             <ul
@@ -220,7 +220,7 @@ export function Hero() {
                 >
                 return (
                   <li key={name as string} className="flex items-center">
-                    <Comp className="h-8 text-gray-400" aria-label={name as string} />
+                    <Comp className="h-8 text-white/30" aria-label={name as string} />
                   </li>
                 )
               })}

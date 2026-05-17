@@ -10,13 +10,14 @@ const baseStyles = {
 
 const variantStyles = {
   solid: {
+    gold: 'bg-gold text-navy hover:bg-gold-dark active:bg-gold-dark active:text-navy/80',
     cyan: 'relative overflow-hidden bg-cyan-500 text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:bg-cyan-600 active:text-white/80 before:transition-colors',
     white:
-      'bg-white text-cyan-900 hover:bg-white/90 active:bg-white/90 active:text-cyan-900/70',
-    gray: 'bg-gray-800 text-white hover:bg-gray-900 active:bg-gray-800 active:text-white/80',
+      'bg-white text-navy hover:bg-white/90 active:bg-white/90 active:text-navy/70',
+    gray: 'bg-white/10 text-white hover:bg-white/20 active:bg-white/10 active:text-white/80',
   },
   outline: {
-    gray: 'border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80',
+    gray: 'border-white/30 text-white hover:border-white/50 hover:bg-white/5 active:bg-white/10 active:text-white/80',
   },
 }
 
@@ -39,14 +40,14 @@ type ButtonProps = (
 
 export function Button({ className, ...props }: ButtonProps) {
   props.variant ??= 'solid'
-  props.color ??= 'gray'
+  props.color ??= 'gold'
 
   className = clsx(
     baseStyles[props.variant],
     props.variant === 'outline'
-      ? variantStyles.outline[props.color]
+      ? variantStyles.outline[props.color as keyof typeof variantStyles.outline]
       : props.variant === 'solid'
-        ? variantStyles.solid[props.color]
+        ? variantStyles.solid[props.color as keyof typeof variantStyles.solid]
         : undefined,
     className,
   )

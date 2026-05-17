@@ -11,14 +11,14 @@ export default function PrivacyPage() {
     <div className="py-20 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl">
-          <h1 className="text-3xl font-medium tracking-tight text-gray-900">
+          <h1 className="text-3xl font-medium tracking-tight text-white">
             Privacy Policy
           </h1>
-          <p className="mt-2 text-sm text-gray-500">Last updated: April 2026</p>
+          <p className="mt-2 text-sm text-white/50">Last updated: April 2026</p>
 
-          <div className="mt-10 space-y-8 text-sm text-gray-700">
+          <div className="mt-10 space-y-8 text-sm text-white/70">
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Introduction
               </h2>
               <p className="mt-3">
@@ -30,12 +30,12 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Information We Collect
               </h2>
               <div className="mt-3 space-y-4">
                 <div>
-                  <h3 className="font-medium text-gray-900">
+                  <h3 className="font-medium text-white">
                     Account Information
                   </h3>
                   <p className="mt-1">
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-900">Match Data</h3>
+                  <h3 className="font-medium text-white">Match Data</h3>
                   <p className="mt-1">
                     When you use CrownCourt to score tennis matches, we store
                     match results (scores, date, duration) in secure cloud
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-900">Health Data</h3>
+                  <h3 className="font-medium text-white">Health Data</h3>
                   <p className="mt-1">
                     CrownCourt can record tennis workouts via Apple HealthKit.
                     Health data is stored only on your device and in Apple
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-900">
+                  <h3 className="font-medium text-white">
                     Profile Information
                   </h3>
                   <p className="mt-1">
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 How We Use Your Information
               </h2>
               <ul className="mt-3 list-disc pl-5 space-y-1">
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Data Storage and Security
               </h2>
               <p className="mt-3">
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Third-Party Services
               </h2>
               <ul className="mt-3 list-disc pl-5 space-y-1">
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Your Rights
               </h2>
               <p className="mt-3">
@@ -121,7 +121,7 @@ export default function PrivacyPage() {
                 from the app settings. Contact us at{' '}
                 <a
                   href="mailto:support@marrachegroup.com"
-                  className="underline hover:text-gray-900"
+                  className="underline hover:text-white"
                 >
                   support@marrachegroup.com
                 </a>{' '}
@@ -130,7 +130,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Changes to This Policy
               </h2>
               <p className="mt-3">
@@ -140,14 +140,14 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-base font-semibold text-gray-900">
+              <h2 className="text-base font-semibold text-white">
                 Contact
               </h2>
               <p className="mt-3">
                 If you have questions about this Privacy Policy, contact us at{' '}
                 <a
                   href="mailto:support@marrachegroup.com"
-                  className="underline hover:text-gray-900"
+                  className="underline hover:text-white"
                 >
                   support@marrachegroup.com
                 </a>

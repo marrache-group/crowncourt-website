@@ -49,7 +49,7 @@ function MobileNavLink(
   return (
     <PopoverButton
       as={Link}
-      className="block text-base/7 tracking-tight text-gray-700"
+      className="block text-base/7 tracking-tight text-white/80"
       {...props}
     />
   )
@@ -73,7 +73,7 @@ export function Header() {
               {({ open }) => (
                 <>
                   <PopoverButton
-                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 focus:not-data-focus:outline-hidden active:stroke-gray-900"
+                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-white p-2 hover:bg-white/10 hover:stroke-white/70 focus:not-data-focus:outline-hidden active:stroke-white"
                     aria-label="Toggle site navigation"
                   >
                     {({ open }) =>
@@ -93,7 +93,7 @@ export function Header() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          className="fixed inset-0 z-0 bg-gray-300/60 backdrop-blur-sm"
+                          className="fixed inset-0 z-0 bg-navy/60 backdrop-blur-sm"
                         />
                         <PopoverPanel
                           static
@@ -105,7 +105,7 @@ export function Header() {
                             y: -32,
                             transition: { duration: 0.2 },
                           }}
-                          className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pt-32 pb-6 shadow-2xl shadow-gray-900/20"
+                          className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-navy-light px-6 pt-32 pb-6 shadow-2xl shadow-black/40"
                         >
                           <div className="space-y-4">
                             <MobileNavLink href="/#features">

@@ -184,7 +184,7 @@ function DigitalCrownScreen(props: ScreenProps) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>CrownCourt</AppScreen.Title>
+        <AppScreen.Title><span className="uppercase text-gold">CrownCourt</span></AppScreen.Title>
         <AppScreen.Subtitle>Game 3 · Set 1</AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody
@@ -521,7 +521,7 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for tennis scoring"
-      className="bg-[#1A1F3A] py-20 sm:py-32"
+      className="bg-navy py-20 sm:py-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">

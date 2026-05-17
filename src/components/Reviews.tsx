@@ -142,20 +142,20 @@ function Review({
   return (
     <figure
       className={clsx(
-        'animate-fade-in rounded-3xl bg-white p-6 opacity-0 shadow-md shadow-gray-900/5',
+        'animate-fade-in rounded-3xl bg-white/5 p-6 opacity-0 shadow-md shadow-black/20 border border-white/10',
         className,
       )}
       style={{ animationDelay }}
       {...props}
     >
-      <blockquote className="text-gray-900">
+      <blockquote className="text-white">
         <StarRating rating={rating} />
         <p className={`mt-4 text-lg/6 font-semibold before:content-['"'] after:content-['"']`}>
           {title}
         </p>
-        <p className="mt-3 text-base/7">{body}</p>
+        <p className="mt-3 text-base/7 text-white/70">{body}</p>
       </blockquote>
-      <figcaption className="mt-3 text-sm text-gray-600 before:content-['–_']">
+      <figcaption className="mt-3 text-sm text-white/40 before:content-['–_']">
         {author}
       </figcaption>
     </figure>
@@ -264,8 +264,8 @@ function ReviewGrid() {
           />
         </>
       )}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-gray-50" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-gray-50" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-navy" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-navy" />
     </div>
   )
 }
@@ -280,11 +280,11 @@ export function Reviews() {
       <Container>
         <h2
           id="reviews-title"
-          className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
+          className="text-3xl font-medium tracking-tight text-white sm:text-center"
         >
           Players love CrownCourt.
         </h2>
-        <p className="mt-2 text-lg text-gray-600 sm:text-center">
+        <p className="mt-2 text-lg text-white/70 sm:text-center">
           Thousands of tennis players score their matches with CrownCourt every
           week.
         </p>

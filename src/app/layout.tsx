@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={clsx('bg-gray-50 antialiased', inter.variable)}>
+    <html lang="en" className={clsx('antialiased', inter.variable)}>
       <body>{children}</body>
     </html>
   )
