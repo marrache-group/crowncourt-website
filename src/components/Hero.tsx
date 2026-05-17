@@ -1,9 +1,85 @@
-import { useId } from 'react'
+'use client'
+
+import { useState, useEffect, useId } from 'react'
+import Image from 'next/image'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { AppStoreLink } from '@/components/AppStoreLink'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { PhoneFrame } from '@/components/PhoneFrame'
+import { WatchFrame } from '@/components/WatchFrame'
+
+const watchScreenshots = [
+  '/images/screenshots/watch/home-dark.png',
+  '/images/screenshots/watch/format-dark.png',
+  '/images/screenshots/watch/coin-flip-dark.png',
+  '/images/screenshots/watch/score-dark.png',
+  '/images/screenshots/watch/score-light.png',
+]
+
+const watchTitles = [
+  'Home screen',
+  'Choose your format',
+  'Built-in coin flip',
+  'Score board... game, set, and match!',
+  'Dark and light modes',
+]
+
+function WatchSlideshow({ current }: { current: number }) {
+  return (
+    <div className="relative h-full w-full overflow-hidden">
+      <AnimatePresence initial={false} mode="popLayout">
+        <motion.div
+          key={current}
+          initial={{ x: '100%' }}
+          animate={{ x: 0 }}
+          exit={{ x: '-100%' }}
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={watchScreenshots[current]}
+            alt={watchTitles[current]}
+            fill
+            className="object-cover"
+            priority={current === 0}
+          />
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  )
+}
+
+function WatchShowcase() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % watchScreenshots.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <WatchFrame className="mx-auto w-full max-w-[300px]">
+        <WatchSlideshow current={current} />
+      </WatchFrame>
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={current}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="text-lg font-medium tracking-wide text-white"
+        >
+          {watchTitles[current]}
+        </motion.p>
+      </AnimatePresence>
+    </div>
+  )
+}
 
 function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
   let id = useId()
@@ -74,108 +150,12 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
   )
 }
 
-function AppleWatchLogo(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 80 24" aria-hidden="true" {...props}>
-      <text
-        x="0"
-        y="18"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontSize="13"
-        fontWeight="500"
-        fill="currentColor"
-      >
-        Apple Watch
-      </text>
-    </svg>
-  )
-}
-
-function AppStoreLogo(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 64 24" aria-hidden="true" {...props}>
-      <text
-        x="0"
-        y="18"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontSize="13"
-        fontWeight="500"
-        fill="currentColor"
-      >
-        App Store
-      </text>
-    </svg>
-  )
-}
-
-function ATPLogo(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 56 24" aria-hidden="true" {...props}>
-      <text
-        x="0"
-        y="18"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontSize="13"
-        fontWeight="500"
-        fill="currentColor"
-      >
-        ATP Tour
-      </text>
-    </svg>
-  )
-}
-
-function UTRLogo(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 72 24" aria-hidden="true" {...props}>
-      <text
-        x="0"
-        y="18"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontSize="13"
-        fontWeight="500"
-        fill="currentColor"
-      >
-        UTR Sport
-      </text>
-    </svg>
-  )
-}
-
-function HealthKitLogo(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 76 24" aria-hidden="true" {...props}>
-      <text
-        x="0"
-        y="18"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontSize="13"
-        fontWeight="500"
-        fill="currentColor"
-      >
-        Apple Health
-      </text>
-    </svg>
-  )
-}
-
-function AppPlaceholder() {
-  return (
-    <div className="flex h-full w-full flex-col items-center justify-center bg-[#1A1F3A]">
-      <p className="text-xs text-gray-500">Screenshot coming soon</p>
-    </div>
-  )
-}
-
 export function Hero() {
   return (
     <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <p className="text-sm font-semibold tracking-widest text-gold uppercase">
-              CrownCourt
-            </p>
             <h1 className="mt-4 text-4xl font-medium tracking-tight text-white">
               Score tennis.
               <br />
@@ -195,36 +175,8 @@ export function Hero() {
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
             <BackgroundIllustration className="absolute top-4 left-1/2 h-[1026px] w-[1026px] -translate-x-1/3 mask-[linear-gradient(to_bottom,white_20%,transparent_75%)] stroke-white/20 sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
             <div className="-mx-4 h-[448px] mask-[linear-gradient(to_bottom,white_60%,transparent)] px-9 sm:mx-0 lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-20 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
-              <PhoneFrame className="mx-auto max-w-[366px]" priority>
-                <AppPlaceholder />
-              </PhoneFrame>
+              <WatchShowcase />
             </div>
-          </div>
-          <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
-            <p className="text-center text-sm font-semibold text-white/60 lg:text-left">
-              Built for
-            </p>
-            <ul
-              role="list"
-              className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-8 lg:mx-0 lg:justify-start"
-            >
-              {[
-                ['Apple Watch', AppleWatchLogo],
-                ['App Store', AppStoreLogo],
-                ['ATP Tour', ATPLogo],
-                ['UTR Sport', UTRLogo],
-                ['Apple Health', HealthKitLogo],
-              ].map(([name, LogoComponent]) => {
-                const Comp = LogoComponent as React.ComponentType<
-                  React.ComponentPropsWithoutRef<'svg'>
-                >
-                return (
-                  <li key={name as string} className="flex items-center">
-                    <Comp className="h-8 text-white/30" aria-label={name as string} />
-                  </li>
-                )
-              })}
-            </ul>
           </div>
         </div>
       </Container>

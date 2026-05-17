@@ -61,8 +61,11 @@ export function Header() {
       <nav>
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
-            <Link href="/" aria-label="Home">
+            <Link href="/" aria-label="Home" className="flex items-center gap-3">
               <Logo className="h-10 w-auto" />
+              <span className="text-sm font-semibold tracking-widest text-gold uppercase">
+                CrownCourt
+              </span>
             </Link>
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />
