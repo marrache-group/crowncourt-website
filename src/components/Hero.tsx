@@ -21,8 +21,8 @@ const watchTitles = [
   'Home screen',
   'Choose your format',
   'Built-in coin flip',
-  'Score board... game, set, and match!',
-  'Dark and light modes',
+  'Full screen score board',
+  'Night and day modes',
 ]
 
 function WatchSlideshow({ current }: { current: number }) {
@@ -72,7 +72,7 @@ function WatchShowcase() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="text-lg font-medium tracking-wide text-white"
+          className="w-full text-center text-lg font-medium tracking-wide text-white"
         >
           {watchTitles[current]}
         </motion.p>
